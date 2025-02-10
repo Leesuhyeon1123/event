@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>property listener</title>
+  </head>
+  <body>
+    <button>클릭</button>
+    <button class="btn1">클릭</button>
+    <!-- button을 담아놓는다 -->
+    <script>
+        // *****onclick으로 쓰기*****
+      // 변수 btnEl에 담아두고, = button을 찾음
+      const btnEl = document.querySelector("button");
+      const btnEl1 = document.querySelector(".btn1")
+      //   변수 btnEl에 클릭시 행동해라
+      btnEl.onclick = function () {
+        // 연결 확인
+        console.log("클릭");
+        // 클릭하면 border style 바뀜
+        btnEl.style.border = "2px solid red";
+        btnEl.style.color = "white";
+        btnEl.style.backgroundColor = "red";
+      };
+      //똑같이 적용하는 화살표함수 방법
+    //   btnEl.onclick = ()=>{
+    //     console.log("화살표 함수 클릭");
+        
+    //   }
+    btnEl.onclick = clickEvent
+    btnEl1.onclick = clickEvent
+    // 재사용할때 씀 
+    function clickEvent(){
+
+        console.log("함수명 클릭");
+        
+    }
+   
+    </script>
+  </body>
+</html>

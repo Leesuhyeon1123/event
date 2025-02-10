@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클릭시 글자색 변경하기</title>
+    <style>
+      .colorChange {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btnColor">글자색 변경</button>
+    <p class="txtP">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsa quia officia tenetur possimus, omnis enim saepe
+      accusamus rerum. Animi, consectetur maiores! Natus ullam id molestiae voluptate esse facere laudantium.
+    </p>
+
+    <script>
+      // 1.글자색 변경하기
+      // 1) btnColor를 변수에 저장하기
+      const btnColor = document.querySelector("#btnColor");
+      // 2) txtP를 변수에 저장하기
+      const txtP = document.querySelector(".txtP");
+
+      // btncolor버튼을 클릭 할 때
+      //   btnColor.addEventListener("click", function () {
+      // txtp 글자 색깔이 바뀌어라
+      // txtP.style.color = "red"
+      // style의 class 가져와서 red색상 넣어주기
+      //     txtP.classList.toggle("colorChange");
+      //   });
+
+      // 2.랜덤으로 글자색 변경하기
+      btnColor.addEventListener("click", function () {
+        const colors = ["red", "blue", "green", "pink", "skyblue", "yellow", "hotpink", "black"];
+        // console.log(Math.random());
+        // console.log(Math.floor(Math.random()));
+        // console.log(colors.length);
+
+        // colors의 7개를 읽음 = 랜덤 설정 코드
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        //  console.log(randomIndex);
+        const randomColor = colors[randomIndex]; //colors에 index번호를 담음
+        // console.log(randomColor); // 버튼 클릭시 컬러 출력됨
+        txtP.style.color = randomColor
+
+
+        // ↓Math 라는 내장 객체 안에 있는 random를 쓰겠음↓
+        // Math.random() - 0과 1사이에서 무작위 소수를 반환하는 코드
+        // Math.floor() - 소수점 이하를 버리고 가장 가까운 정수로 내림한다.
+      });
+    </script>
+  </body>
+</html>

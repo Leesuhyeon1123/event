@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseOver 이벤트</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid #333;
+            transition: all 0.3s;
+        }
+        .changeColor{
+            background-color: aqua;
+            border-radius: 50%;
+            border: 3px dotted blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>mouseOver 이벤트</h1>
+    <div class="box"></div>
+    <script>
+        const boxColor = document.querySelector(".box")
+        boxColor.addEventListener("mouseover", function(){
+            // console.log(this);
+            // this.style.backgroundColor = "blue"
+            this.classList.toggle("changeColor")
+            
+            
+       
+        })
+        boxColor.addEventListener("mouseleave", function(){
+            // console.log(this);
+            // this.style.backgroundColor = "blue"
+            this.classList.toggle("changeColor")
+        
+       
+        })
+    </script>
+</body>
+</html>
