@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blur 이벤트</title>
+    <style>
+      #nameError {
+        color: red;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>blur 이벤트</h1>
+    <label for="input">이름</label>
+    <input type="text" id="input" placeholder="이름을 입력하세요." />
+    <span id="nameError">
+      <!-- js :출력 'error메세지 띄우기'  -->
+    </span>
+
+    <script>
+      const input = document.querySelector("#input");
+      const nameError = document.querySelector("#nameError");
+      input.addEventListener("blur", function () {
+        const inputValue = input.value.trim(); //trim() 입력필드값 앞뒤 공백 없애는 메서드
+        // console.log(inputValue);
+        if (inputValue === "") {
+          nameError.textContent = "이름을 입력하세요.";
+          nameError.style.display = "inline";
+        } else {
+          nameError.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
