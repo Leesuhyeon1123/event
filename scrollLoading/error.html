@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error 이벤트</title>
+    <style>
+        #img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="KakaoTalk_20250211_101243720.png" alt="이미지 " id="img">
+    <script>
+        const img = document.getElementById("img")
+        img.addEventListener("error", function(){
+            console.log("이미지 로딩 실패"); //png로 잘못입력됐을때 이미지안뜸
+            img.src = "KakaoTalk_20250211_101243720.jpg" //이미지 재출력
+
+        })
+    </script>
+</body>
+</html>
